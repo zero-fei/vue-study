@@ -54,5 +54,4 @@ KVueRouter.install = function(Vue) {
     }
   })
 }
-export { kVue } 
 export default KVueRouter
