@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p @click='handleClick'>{{count}}</p>
+    <p k-text='count'></p>
+    <p k-html='desc'></p>
+  </div>
+  <script src="index.js"></script>
+  <script>
+    const app = new KVue({
+      el: '#app',
+      data: {
+        count: 1,
+        desc: '<span style="color: red">棒</span>'
+      },
+      methods: {
+        handleClick() {
+          console.info('我点击了')
+        }
+      }
+    })
+    setInterval(() => {
+      app.$data.count++
+    }, 1000);
+  </script>
+</body>
+
+</html>
